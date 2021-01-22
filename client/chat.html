@@ -7,6 +7,7 @@
     <title>Chat</title>
     <link rel="stylesheet" href="css/global.css">
     <link rel="icon" href="img/favicon.png" type="image/png" />
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
     <script type="module" src="src/page-chat.js"></script>
 </head>
@@ -15,9 +16,11 @@
     <!-- Tout le code html doit faire partie de ce div -->
     <div id="app">
         <a href="javascript:void(0)" id="sign-out-btn" @click="signout">Déconnexion</a>
-        <div>
-            <textarea cols="30" rows="10" v-on:keyup.enter="sendMessage($event)" ref="el"></textarea>
-        </div>
+        <div :class="[message.Privacy == false ? 'blue' : 'red']" v-for="message in messages"><span>{{ message.Utilisateur }} : </span><span>{{ message.Message }}</span></div>
+        <textarea cols="30" rows="10" v-on:keyup.enter="sendMessage($event)" ref="el"></textarea>
+        <div v-for="members in membersConnect">{{members}}</div>
+
+    </div>
     </div>
 </body>
 

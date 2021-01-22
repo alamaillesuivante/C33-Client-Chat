@@ -1,4 +1,63 @@
 * {
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: 'Ubuntu';
+    font-weight: bolder;
+}
+
+#starwars {
+    background-image: url('../img/star-wars-backgrounds.jpg');
+    background-position: center;
+}
+
+#signIn {
+    width: 205px;
+    background-color: blue;
+    padding: 10px;
+    border: double white 1px;
+    border-radius: 12px;
+    position: absolute;
+    top: -200px;
+    left: 50%;
+}
+
+.generic {
+    border: red;
+    position: fixed;
+    top: 120px;
+}
+
+input.entree {
+    max-width: 180px;
+}
+
+a {
+    color: red;
+}
+
+.entree {
+    font-family: 'Ubuntu';
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    background-color: red;
+    padding-right: 21px;
+    padding-left: 21px;
+}
+
+.blue {
+    color: blue
+}
+
+.red {
+    color: red
 }
