@@ -12,15 +12,23 @@
     <script type="module" src="src/page-chat.js"></script>
 </head>
 
-<body>
+<body id="communication-rebel">
     <!-- Tout le code html doit faire partie de ce div -->
     <div id="app">
-        <a href="javascript:void(0)" id="sign-out-btn" @click="signout">Déconnexion</a>
-        <div :class="[message.Privacy == false ? 'blue' : 'red']" v-for="message in messages"><span>{{ message.Utilisateur }} : </span><span>{{ message.Message }}</span></div>
-        <textarea cols="30" rows="10" v-on:keyup.enter="sendMessage($event)" ref="el"></textarea>
-        <div v-for="members in membersConnect">{{members}}</div>
+        <a href="javascript:void(0)" id="sign-out-btn" @click="signout" class="deconnecter">Déconnexion</a>
+        <div class="messageBox">
+            <div :class="[message.Privacy == false ? 'blue' : 'red']" v-for="message in messages"><span>{{ message.Utilisateur }} : </span><span>{{ message.Message }}</span></div>
+        </div>
+        <textarea cols="100" rows="6" v-on:keyup.enter="sendMessage($event)" ref="el" class="textchat"></textarea>
 
-    </div>
+        <div id="memberOnline"><sup>Rebels en ligne</sup>
+            <div class="memberlist" v-for="members in membersConnect">{{members}}</div>
+        </div>
+        <div id=RebelOnline>
+            <div class="crew">
+                <div v-for="rebel in connection" class="ship"></div>
+            </div>
+        </div>
     </div>
 </body>
 

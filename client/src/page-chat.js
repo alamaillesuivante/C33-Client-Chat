@@ -3,7 +3,8 @@ new Vue({
     el: '#app',
     data: {
         messages: [],
-        membersConnect: []
+        membersConnect: [],
+        connection: []
     },
     methods: {
         /* NO TOUCH */
@@ -26,7 +27,11 @@ new Vue({
         memberListUpdate(members) {
             console.log(members);
             this.membersConnect = members
-        }
+            let rebel = members
+            this.connection = rebel
+        },
+
+
     },
     /* NO TOUCH */
     mounted() { /* NO TOUCH */
