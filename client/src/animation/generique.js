@@ -1,6 +1,11 @@
+const FONT_DEC = 0.03
+const FONT_SIZE = 62
+const FIN_GENERIQUE = 200
+
 class generique {
     constructor(gen, texte, y) {
-
+        //ajout du texte passé en parametre a 
+        //une class  et précision de la position initial et du style
         const node = document.getElementById('starwars')
         this.element = document.createElement('div')
         this.element.setAttribute('class', gen)
@@ -8,12 +13,9 @@ class generique {
         this.element.textContent = texte
         this.x = 22.5
         this.y = 800 + y
-        this.element.style.color = 'yellow'
-        this.element.style.fontSize = `${62}px`
-        this.element.style.width = `${55}%`;
+        this.element.style.fontSize = `${FONT_SIZE}px`
         this.element.style.transform = `skewX(${-25}deg`;
-        this.element.style.textAlign = 'center'
-        this.newFont = 64
+        this.newFont = FONT_SIZE
         this.isAlive = true;
     }
 
@@ -22,9 +24,9 @@ class generique {
 
     tick() {
 
-        if (this.y > 200) {
+        if (this.y > FIN_GENERIQUE) {
             this.y--;
-            this.newFont -= 0.03;
+            this.newFont -= FONT_DEC;
             this.element.style.fontSize = `${this.newFont}px`
             this.element.style.top = `${this.y}px`
             this.element.style.left = `${this.x}%`
@@ -32,5 +34,7 @@ class generique {
             this.element.remove();
             this.isAlive = false;
         }
+
+
     }
 }

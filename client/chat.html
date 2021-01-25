@@ -15,7 +15,7 @@
 <body id="communication-rebel">
     <!-- Tout le code html doit faire partie de ce div -->
     <div id="app">
-        <a href="javascript:void(0)" id="sign-out-btn" @click="signout" class="deconnecter">Déconnexion</a>
+        <div class="deconnecter"><a href="javascript:void(0)" id="sign-out-btn" @click="signout">Quitter l'assemblée</a></div>
         <div class="messageBox">
             <div :class="[message.Privacy == false ? 'blue' : 'red']" v-for="message in messages"><span>{{ message.Utilisateur }} : </span><span>{{ message.Message }}</span></div>
         </div>

@@ -30,8 +30,6 @@ new Vue({
             let rebel = members
             this.connection = rebel
         },
-
-
     },
     /* NO TOUCH */
     mounted() { /* NO TOUCH */
